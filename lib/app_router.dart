@@ -8,7 +8,7 @@ class AppRouter {
   Route? generateRouter(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case loginScreen:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(builder: (_) => LoginScreen());
     }
   }
 }
