@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_maps/constants/my_color.dart';
+import 'package:flutter_maps/constants/strings.dart';
+
+import 'otp_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -96,12 +99,12 @@ class LoginScreen extends StatelessWidget {
     return flag;
   }
 
-  Widget _buildNextButton() {
+  Widget _buildNextButton(BuildContext context) {
     return Align(
       alignment: Alignment.centerRight,
       child: ElevatedButton(
         onPressed: () {
-          // TODO : NEXTVIDEO
+          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>OtpScreen()));
         },
         style: ElevatedButton.styleFrom(
             maximumSize: Size(110, 50),
@@ -125,7 +128,8 @@ class LoginScreen extends StatelessWidget {
             Form(
               key: _phoneForeKey,
               child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 32, vertical: 88),
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 32, vertical: 88),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -134,7 +138,7 @@ class LoginScreen extends StatelessWidget {
                       height: 110,
                     ),
                     _bildPhoneFormField(),
-                    _buildNextButton(),
+                    _buildNextButton(context),
                   ],
                 ),
               ),
